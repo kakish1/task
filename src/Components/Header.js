@@ -71,7 +71,7 @@ export const Header = () => {
             <Switch>
                 <Route exact path="/login" render={() => <Login fetchData={fetchData} isAuth={isAuth} error={error} />} />
                 <Route exact path="/terminals" component={Terminals} />
-                <Route exactpath="/buyers/:id?" component={Buyers} />
+                <Route exact path="/buyers/:id?" component={Buyers} />
                 <Route path="" component={NotFound} />
             </Switch>
 
