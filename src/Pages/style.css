@@ -1,0 +1,30 @@
+.loginForm {
+    height: 900px;
+    padding: 30px;
+}
+
+.loginBlock {
+    border: 1px solid
+}
+
+.buyersBlock{
+    padding: 30px;
+}
+
+.terminalBlock {
+    height: 900px;
+    padding: 30px;
+}
+
+.showButtons{
+    padding-bottom: 15px;
+}
+
+.terminalTable {
+    padding: 30px;
+}
+
+.notFoundBlock{
+    height: 900px;
+    padding: 30px;
+}
