@@ -17,16 +17,17 @@ const AllBayers = (props) => {
 
     return (
         <Container>
-            <Table bordered striped hover={true} >
-                <thead>
+            <Table bordered striped hover={true} style={{width : 'auto' }}>
+                <thead style={{textAlign : 'center'}}>
                     <tr>
-                        <td>ID Покупателя</td>
-                        <td>Имя покупателя</td>
-                        <td>Средний чек</td>
-                        <td>Количество покупок</td>
+                        <td> ID Покупателя </td>
+                        <td> Имя покупателя</td>
+                        <td onClick={() => props.onSort('check')}>Средний чек</td>
+                        <td onClick={() => props.onSort('count')}>Количество покупок</td>
+                        <td onClick={() => props.onSort('sum')}>Общая выручка</td>                        
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style={{textAlign : 'center'}}>
 
                     {
                         currentBuyers.map((items =>
@@ -36,6 +37,7 @@ const AllBayers = (props) => {
                                     <td>{items.name}</td>
                                     <td>{items.check}</td>
                                     <td>{items.count}</td>
+                                    <td>{items.sum}</td>                                    
                                 </tr>
                             </>
                         ))
@@ -48,7 +50,7 @@ const AllBayers = (props) => {
                 <Button variant='primary' onClick={() => setBuyersPerPage(10)}> 10</Button>
                 <Button variant='primary' onClick={() => setBuyersPerPage(15)}> 15</Button>
             </div>
-            {buyersPerPage == 5 || 10 ? <Pagination buyersPerPage={buyersPerPage} totalBuyers={props.buyers.length} paginate={paginate} />  : ''}
+            {buyersPerPage === 5 || 10 ? <Pagination buyersPerPage={buyersPerPage} totalBuyers={props.buyers.length} paginate={paginate} />  : ''}
         </Container>
     );
 }

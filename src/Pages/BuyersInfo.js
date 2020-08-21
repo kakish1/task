@@ -2,8 +2,8 @@ import React from 'react';
 import { Container, Card } from 'react-bootstrap';
 
 const BuyersInfo = (props) => {
-    
-    const arr = [props.buyers.find(item => item['id'] == props.id)]
+
+    const arr = [props.buyers.find(item => item['id'] == props.id)];
     return (
         <Container>
             <Card>
@@ -14,7 +14,7 @@ const BuyersInfo = (props) => {
 
                         {
                             arr.map((items) =>
-                                <>
+                                <div key={items.id}>
                                     <p>
                                         Ваш ID : {items.id}
                                     </p>
@@ -27,22 +27,12 @@ const BuyersInfo = (props) => {
                                     <p>
                                         Количество покупок : {items.count}
                                     </p>
-                                </>
+                                    <p>
+                                        Общая выручка : {items.sum}
+                                    </p>
+                                </div>
                             )
                         }
-
-                        {/* <p>
-                            Ваш ID : {props.buyers.id = props.match.params.id}
-                        </p>
-                        <p>
-                            Ваше имя : {props.buyers.name = props.match.params.id}
-                        </p>
-                        <p>
-                            Средний чек : {props.buyers.check = props.match.params.id}
-                        </p>
-                        <p>
-                            Количество покупок : {props.buyers.count = props.match.params.id}
-                        </p> */}
                     </blockquote>
                 </Card.Body>
             </Card>
