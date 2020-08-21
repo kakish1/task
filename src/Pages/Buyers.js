@@ -21,7 +21,7 @@ const Buyers = (props) => {
         { id: 12, name: 'Aset', check: 13567, count: 154, sum: 23467},
         { id: 13, name: 'Aldik', check: 124565, count: 1678, sum: 32627},
         { id: 14, name: 'Estai', check: 124444, count: 56, sum: 262727},
-        { id: 15, name: 'Arman', check: 124577, count: 1, sum: 8695464},
+        { id: 15, name: 'Arman', check: 5000, count: 1, sum: 8695464},
     ])
 
     let [sorting, setSorting] = useState({
