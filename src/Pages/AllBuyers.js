@@ -17,12 +17,11 @@ const AllBayers = (props) => {
     const currentBuyers = props.buyers.slice(indexOfFirstBuyer, indexOfLastBuyer);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    const filteredArr = props.buyers.filter(item => item['name'].toLowerCase() === name.toLowerCase());
+    const filteredArr = props.buyers.filter(item => item['name'].toLowerCase().indexOf(name.toLowerCase()) >=0 );
 
     
 
     const onFilter = () => {
-        console.log(filteredArr)
         setFiltered(true);
     }
 
@@ -31,9 +30,7 @@ const AllBayers = (props) => {
             <Form.Group controlId="filterName">
                 <Form.Label> Фильтрация по имени: </Form.Label>
                 <Form.Control type="filterName" placeholder="Введите имя..." style={{ width: '250px' }}
-                    value={name} onChange={e => setName(e.target.value)}
-                    onBlur={()=>{''}}
-                />
+                    value={name} onChange={e => setName(e.target.value)} />
                 <Button onClick={() => onFilter()} style={{ margin: '15px' }}> Найти </Button>
                 <Button variant='danger' onClick={() => setFiltered(false)} style={{ marginLeft: '3px' }}> Очистить </Button>
             </Form.Group>

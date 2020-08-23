@@ -7,7 +7,6 @@ import { Redirect } from 'react-router';
 const Login = (props) => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
-    debugger
     return (
         <>
             {
